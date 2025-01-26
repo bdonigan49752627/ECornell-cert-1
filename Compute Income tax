@@ -1,0 +1,51 @@
+#Practice CT 401 Compute Income Tax
+#Instructions:
+
+#This is a graded activity. After you have completed the exercise, on the bottom of the last page of instructions, click the "Mark as Completed" button to submit your work for review.
+#For this final project, it’s time to put into practice everything we have covered in this course.
+#Write a program that asks the user to input his or her taxable income (expressed as a positive integer) and prints the amount of federal income tax they owe.
+#The table below contains sample federal income tax brackets:
+#Federal Income Tax Rates:
+#Tax Rate
+#Taxable income bracket
+#Tax owed
+#10%	$0 to $9,700	10% of taxable income
+#12%	$9,701 to $39,475	$970.00 plus 12% of the amount over $9,700
+#22%	$39,476 to $84,200	$4,543.00 plus 22% of the amount over $39,475
+#24%	$84,201 to $160,725	$14,382.50 plus 24% of the amount over $84,200
+#32%	$160,726 to $204,100	$32,748.50 plus 32% of the amount over $160,725
+#35%	$204,101 to $510,300	$46,628.50 plus 35% of the amount over $204,100
+#37%	$510,301 or more	$153,798.50 plus 37% of the amount over $510,300
+#Your program should use the information contained in this table to compute the tax owed for the different tax brackets.
+#Your program will:
+#Ask the user to input his or her yearly income
+#Compute how much tax is owed
+#Output that amount to the user
+#Hint: This is a more complex project than you have previously done. Take it in stages. One approach may be to start by writing a program that assumes the user's income is in the lowest (10%) bracket, computes the tax owed, and prints it. Test your work by running your program. If it works, then continue by modifying the program to add the second (15%) bracket: first decide whether the income falls in the 10% or 15% bracket, and then compute the tax owed accordingly. Continue to test your code by running the exercise.py from the terminal, and continue until you have included all tax brackets successfully.
+#Sample output:
+#Enter your income: [user enters 35075]
+#Tax due: $4015.0
+
+income = int(input('What is your yearly income?'))
+if income >= 0 and income <=9700:
+    Tax =int(income * .10)
+    print('Tax Due: $' + str(Tax))
+elif income >=9701 and income <=39475:
+    Tax =(income -9700) * .12 + 970
+    print('Tax Due: $' + str(Tax))
+elif income >=39476 and income <=84200:
+    Tax =(income -39475) * .22 + 4543
+    print('Tax Due: $' + str(Tax))
+elif income >=84201 and income <=160725:
+    Tax =(income -84200) * .24 + 14382.5
+    print('Tax Due: $' + str(Tax))
+elif income >=160726 and income <=204100:
+    Tax =(income -160725) * .32 + 32748.50
+    print('Tax Due: $' + str(Tax))
+elif income >=204101 and income <=510300:
+    Tax =(income -204100) * .35 + 46628.50
+    print('Tax Due: $' + str(Tax))
+elif income >=510301:
+    Tax =(income -510300) * .37 + 153798.50
+    print('Tax Due: $' + str(Tax))
+
